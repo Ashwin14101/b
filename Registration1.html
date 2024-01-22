@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Bootstrap Datepicker CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+<!-- Bootstrap Datepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.en-GB.min.js"></script>
+
+
+<link rel="stylesheet" href="style.css">
+<script>
+    function nextTab(tabId) {
+      $('#myTabs a[href="#' + tabId + '"]').tab('show');
+    }
+
+    function prevTab(tabId) {
+      $('#myTabs a[href="#' + tabId + '"]').tab('show');
+    }
+
+
+    $(document).ready(function(){
+    $('#datepicker').datepicker();
+  });
+
+  </script>
+  <style>
+    body{
+      background-image: url("hexa2.jpg");
+    }
+  </style>
+  
+</head>
+<body background="green">
+
+<div class="container mt-5">
+  <ul class="nav nav-tabs" id="myTabs">
+    <li class="nav-item">
+      <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal">Personal Details</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="professional-tab" data-toggle="tab" href="#professional">Professional Details</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="educational-tab" data-toggle="tab" href="#educational">Educational Details</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="languages-tab" data-toggle="tab" href="#languages">Languages</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="submit-tab" data-toggle="tab" href="#submit">Submit</a>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-2">
+    <!-- Personal Details Tab -->
+    <div class="tab-pane fade show active" id="personal">
+      <h4 class="mt-3">Personal Details</h4>
+      <form>
+        <!-- Personal details fields go here -->
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select class="form-control" id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="text" class="form-control" id="datepicker" name="datepicker">
+        </div>
+        <div class="form-group">
+<div class="mb-3">
+  <label for="" class="form-label">Address</label>
+  <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+</div>
+
+        </div>
+        <div class="form-group">
+            <label for="photo">Attach Photo:</label><br>
+            <input class="form-control form-control-lg" id="formFileLg" type="file" />
+                     
+            </div>
+          
+          
+          
+        <!-- Add more personal details fields as needed -->
+        <button class="btn btn-primary" type="button" onClick="nextTab('professional')">Next</button>
+      </form>
+    </div>
+
+    <!-- Professional Details Tab -->
+    <div class="tab-pane fade" id="professional">
+     <h4 class="mt-3">Professional Details</h4>
+      <form>
+        <!-- Professional details fields go here -->
+        <div class="form-group">
+          <label for="experience">Experience:</label>
+          <input type="text" class="form-control" id="experience" name="experience">
+        </div>
+        <div class="form-group">
+          <label for="company">Company Name:</label>
+          <input type="text" class="form-control" id="company" name="company">
+        </div><br>
+        <!-- Add more professional details fields as needed -->
+        <div class="row">
+        <button class="btn btn-primary col-sm-1" type="button" onClick="nextTab('personal')" >Back</button>
+        <div class="col-sm-10"></div><br>
+        <button class="btn btn-primary col-sm-1" type="button" onClick="nextTab('educational')">Next</button>
+        </div><br>
+    
+    </form>
+    </div>
+
+    <!-- Educational Details Tab -->
+    <div class="tab-pane fade" id="educational">
+      <h4 class="mt-3">Educational Details</h4>
+      <form>
+        <!-- Educational details fields go here -->
+        <div class="form-group">
+          <label for="specialization">Specialization:</label>
+          <input type="text" class="form-control" id="specialization" name="specialization">
+        </div>
+        <div class="form-group">
+          <label for="year">Year of Passing:</label>
+          <input type="text" class="form-control" id="year" name="year">
+        </div><br>
+        <!-- Add more educational details fields as needed -->
+
+        <div class="row">
+            <button class="btn btn-primary col-sm-1" type="button" onClick="nextTab('professional')" >Back</button>
+            <div class="col-sm-10"></div><br>
+            <button class="btn btn-primary col-sm-1" type="button" onClick="nextTab('languages')">Next</button>
+            </div><br>
+        
+      </form>
+    </div>
+
+    <!-- Languages Tab -->
+    <div class="tab-pane fade" id="languages">
+      <h4 class="mt-3">Languages</h4>
+      
+      
+      <form>
+        <!-- Languages details fields go here -->
+        <div class="form-group">
+          <label for="write">Read:</label>&nbsp;
+            <select
+                class="form-select form-select-lg"
+                name="read"
+                id="read"
+            >
+                <option selected>Select one</option>
+                <option value="Telugu">Telugu</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+            </select>
+          </div>
+          
+                  
+          <div class="form-group">
+            <label for="Read">Write:</label>&nbsp;
+            <select
+                class="form-select form-select-lg"
+                name="read"
+                id="read"
+            >
+                <option selected>Select one</option>
+                <option value="Telugu">Telugu</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="Speak">Speak:</label>&nbsp;
+            <select
+                class="form-select form-select-lg"
+                name="speak"
+                id="speak"
+            >
+                <option selected>Select one</option>
+                <option value="Telugu">Telugu</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+            </select>
+        </div><br>
+        
+        <!-- Add more languages details fields as needed -->
+        <div class="row">
+            <button class="btn btn-primary col-sm-1" type="button" onClick="nextTab('languages')" >Back</button>
+            <div class="col-sm-1"></div><br>
+            <button class="btn btn-primary col-sm-1" type="button" onClick="nextTab('submit')">Next</button>
+            </div><br>
+        
+         </form>
+    </div>
+
+    <!-- Submit Tab -->
+    <div class="tab-pane fade" id="submit">
+      <h4 class="mt-3">Submit</h4>
+      <p>Review your information and click 'Submit' to complete the registration.</p>
+      <!-- Add a summary of entered information here -->
+
+      <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
